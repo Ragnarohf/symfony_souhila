@@ -1,0 +1,8 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+	<h2>{{evenement.title}}</h2>
+	<p>{{evenement.description}}</p>
+	<span>{{evenement.createdAt|date("d-m-Y")}}</span>
+
+{% endblock %}

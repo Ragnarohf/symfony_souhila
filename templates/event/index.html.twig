@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}evenement
+{% endblock %}
+
+{% block body %}
+
+
+	{% for evenement in evenements %}
+		<h2>{{evenement.title}}</h2>
+		<img src="{{evenement.image}}" alt="">
+		<img src="https://picsum.photos/200/300" alt="">
+		<span>{{evenement.createdAt | date('Y-m-d')}}</span>
+		<p>{{evenement.description}}</p>
+		<span>{{evenement.id}}</span>
+		<a href="{{path('afficheOne',{'id':evenement.id})}}">
+			<button class="btn btn-success">Afficher</button>
+		</a>
+		<a href="{{path('editEvent',{'id':evenement.id})}}">
+			<button class="btn btn-danger">Mettre à jour</button>
+		</a>
+		<a href="{{path('deleteEvent',{'id':evenement.id})}}">
+			<button class="btn btn-warning">supprimer</button>
+		</a>
+	{% endfor %}
+
+{% endblock %}
